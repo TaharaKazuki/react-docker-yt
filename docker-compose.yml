@@ -3,13 +3,15 @@ services:
   react-app:
     # stdin_open: true
     # tty: true
-    build: .
-    ports:
-      - '3000:3000'
-    volumes:
-      - ./src:/app/src
-    environment:
-      - REACT_APP_NAME=hogehoge
-      - CHOKIDIR_USEPOLLING=true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # ports:
+    #   - '3000:3000'
+    # volumes:
+    #   - ./src:/app/src
+    # environment:
+    #   - REACT_APP_NAME=hogehoge
+    #   - CHOKIDIR_USEPOLLING=true
     # env_file:
     #   - ./.env
